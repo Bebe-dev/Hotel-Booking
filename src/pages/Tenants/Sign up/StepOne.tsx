@@ -1,11 +1,7 @@
-//import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Mail } from "tabler-icons-react";
 import * as Yup from "yup";
-// import { auth, db } from "../../../firebase";
-// import { serverTimestamp } from "firebase/database";
-// import { setDoc, doc } from "firebase/firestore";
-// import { sendEmailVerification } from "firebase/auth";
+
 
 interface FormValues {
   name: string;
@@ -40,7 +36,7 @@ const validationSchema = Yup.object({
     .min(8, "Must be at least 8 characters"),
 });
 
-export default function StepOne({ formData, handleChange, onNext }: Step1) {
+export default function StepOne({ onNext }: Step1) {
   const handleSubmit = async (values: FormValues, { setSubmitting }: any) => {
     // try {
 

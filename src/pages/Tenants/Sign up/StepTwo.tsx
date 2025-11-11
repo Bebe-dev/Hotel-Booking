@@ -21,7 +21,7 @@ type Step2 = {
 };
 
 
-export default function StepTwo({ formData, handleChange, onNext }:Step2) {
+export default function StepTwo({ onNext }:Step2) {
   
   const handleSubmit = (values: any, {setSubmitting}:any) => {
     onNext(values);

@@ -51,7 +51,7 @@ export default function Account() {
 
         await deleteUser(user);
         await deleteDoc(doc(db, "users", user.uid));
-        //navigate("/login")
+        navigate("/login")
         alert("Account deleted successfully")
       } catch (error) {
         console.error("Error deleting account", error);
