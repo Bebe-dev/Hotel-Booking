@@ -35,24 +35,20 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="*" element={<ErrorPage />} />
-            <Route
-              path="/listings"
-              element={
-                <ProtectedRoute>
-                  <Listings />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/listing/:id" element={<RoomDetails />} />
-            <Route path="/booking/:id" element={<Booking />}>
-              <Route index element={<ContactInfo />} />
-              <Route path="payment" element={<Payment />} />
-              <Route path="cancellation" element={<Cancellation />} />
-            </Route>
 
-            <Route path="/account" element={<Account />} />
-            <Route path="/favorites" element={<Favorites />} />
-            <Route path="/roomApplication" element={<RoomApplication />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/listings" element={<Listings />} />
+              <Route path="/listing/:id" element={<RoomDetails />} />
+              <Route path="/booking/:id" element={<Booking />}>
+                <Route index element={<ContactInfo />} />
+                <Route path="payment" element={<Payment />} />
+                <Route path="cancellation" element={<Cancellation />} />
+              </Route>
+
+              <Route path="/account" element={<Account />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/roomApplication" element={<RoomApplication />} />
+            </Route>
           </Route>
 
           {/* LANDLORD ROUTES */}

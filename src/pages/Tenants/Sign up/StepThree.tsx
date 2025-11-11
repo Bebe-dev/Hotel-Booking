@@ -45,7 +45,7 @@ export default function StepThree({ formData }: StepThreeProps) {
         }
 
         await sendEmailVerification(user, {
-          url: "http://localhost:5173/",
+          url: "https://hotel-booking-jet-six.vercel.app/",
         });
         //alert("Email sent successfully");
 

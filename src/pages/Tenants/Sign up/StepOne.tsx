@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Link } from "react-router-dom";
 import { Mail } from "tabler-icons-react";
 import * as Yup from "yup";
-
 
 interface FormValues {
   name: string;
@@ -15,7 +15,6 @@ type Step1 = {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onNext: (values: FormValues) => void;
 };
-
 
 const initialValues: FormValues = {
   name: "",
@@ -45,12 +44,12 @@ export default function StepOne({ onNext }: Step1) {
     //     values.email,
     //     values.password
     //   );
-      
+
     //   if (auth.currentUser) {
     //     await updateProfile(auth.currentUser, {
     //       displayName: values.name
     //     })
-        
+
     //   }
     //   const user = userCredential.user;
     //   //alert("Creating user successful");
@@ -79,8 +78,8 @@ export default function StepOne({ onNext }: Step1) {
     //   // Handle error if needed
     //   alert("Error signing up: " + (error as Error).message);
     // } finally {
-      onNext(values);
-      setSubmitting(false);
+    onNext(values);
+    setSubmitting(false);
     //}
   };
 
@@ -89,7 +88,9 @@ export default function StepOne({ onNext }: Step1) {
       {/* Left: Form */}
       <div className="w-full md:w-1/2 flex items-center justify-center mt-12">
         <div className="max-w-md w-full mx-auto p-6 bg-white rounded-lg shadow-md">
-          <h2 className="text-2xl text-[#25409C] font-semibold mb-6">Sign Up</h2>
+          <h2 className="text-2xl text-[#25409C] font-semibold mb-6">
+            Sign Up
+          </h2>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -199,12 +200,18 @@ export default function StepOne({ onNext }: Step1) {
           </div>
           <div className="text-center text-sm">
             Already have an account?{" "}
-            <a
+            {/* <a
               href="/login"
               className="text-[#25409C] font-bold hover:underline"
             >
               Log in
-            </a>
+            </a> */}
+            <Link
+              className="text-[#25409C] font-bold hover:underline"
+              to="/login"
+            >
+              Log in
+            </Link>
           </div>
           <div className="flex gap-6 justify-around items-center text-sm mt-2">
             <p>&copy; ErasmusLifeHousing</p>

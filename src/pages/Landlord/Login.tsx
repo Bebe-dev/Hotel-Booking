@@ -8,7 +8,7 @@ import {
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { auth, db } from "../../firebase";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { doc, getDoc } from "firebase/firestore";
 
 export default function LandlordLogin() {
@@ -150,12 +150,12 @@ export default function LandlordLogin() {
         {/* Don't have an account */}
         <div className="text-sm">
           Don't have an account?{" "}
-          <a
-            href="/landlords/signup"
+          <Link
             className="text-[#25409C] hover:underline font-medium"
+            to="/landlords/signup"
           >
             Sign up
-          </a>
+          </Link>
         </div>
         <div className="text-sm mt-8">
           <p>&copy; ErasmusLifeHousing</p>

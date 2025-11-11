@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { auth } from "../../firebase";
 import {
@@ -59,7 +59,7 @@ export default function Login() {
               );
 
               const user = userCredential.user;
-              
+
               alert(`Login successful! Welcome back ${user.email}`);
               navigate("/");
             } catch (error) {
@@ -147,12 +147,18 @@ export default function Login() {
         {/* Don't have an account */}
         <div className="text-sm">
           Don't have an account?{" "}
-          <a
+          {/* <a
             href="/signup"
             className="text-[#25409C] hover:underline font-medium"
           >
             Sign up
-          </a>
+          </a> */}
+          <Link
+            className="text-[#25409C] hover:underline font-medium"
+            to="/signup"
+          >
+            Sign Up
+          </Link>
         </div>
         <div className="text-sm mt-8">
           <p>&copy; ErasmusLifeHousing</p>
