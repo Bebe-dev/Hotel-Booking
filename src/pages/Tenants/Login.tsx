@@ -16,7 +16,7 @@ export default function Login() {
     <div className="flex min-h-screen font-sans text-[#484848]">
       {/* Left Image */}
       <div
-        className="flex-1 bg-cover bg-center"
+        className="flex-1 bg-cover bg-center hidden md:block"
         style={{
           backgroundImage: "url('images/login.svg')",
         }}
