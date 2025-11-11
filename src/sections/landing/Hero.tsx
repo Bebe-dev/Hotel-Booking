@@ -27,7 +27,7 @@ export default function Hero() {
 
   const navigate = useNavigate();
   return (
-    <section className="relative flex min-h-[80vh] items-stretch">
+    <section className="relative md:flex min-h-[80vh] items-stretch">
       {/* Left Half */}
       <div className="flex-1 px-8 pl-16 pt-12 pb-28 flex flex-col justify-center">
         <h1 className="text-4xl text-[#25409C] md:text-5xl font-bold mb-4">
@@ -66,7 +66,7 @@ export default function Hero() {
       </div>
 
       {/* Search Form */}
-      <div className="absolute left-1/2 bottom-8 -translate-x-1/2 w-[80%] bg-white rounded-2xl shadow-xl px-4 py-4 z-10 rounded-md border border-gray-300">
+      <div className="md:absolute md:left-1/2 md:bottom-8 md:-translate-x-1/2 w-[80%] bg-white rounded-2xl shadow-xl px-4 py-4 z-10 rounded-md border border-gray-300">
         <div className="flex items-center justify-between">
           <p className="font-semibold">Search for available rooms</p>
           <StackPush />

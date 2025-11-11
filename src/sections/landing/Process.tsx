@@ -8,9 +8,9 @@ export default function Process() {
         </h2>
       </div>
 
-      <div className="flex justify-between gap-6 px-4 md:px-20 py-10">
+      <div className="md:flex justify-between gap-6 px-4 md:px-20 py-10">
         {/* 1 */}
-        <div className="text-[#484848] w-1/4 ">
+        <div className="text-[#484848] md:w-1/4 ">
           <h3 className="text-4xl font-bold pb-4">1</h3>
           <h4 className="font-semibold text-md py-2">Pick a few spaces</h4>
           <p className="text-sm">
@@ -21,7 +21,7 @@ export default function Process() {
         </div>
 
         {/* 2 */}
-        <div className="text-[#484848] w-1/4 ">
+        <div className="text-[#484848] md:w-1/4 ">
           <h3 className="text-4xl font-bold pb-4">2</h3>
           <h4 className="font-semibold text-md py-2">
             Accepting a reservation
@@ -34,7 +34,7 @@ export default function Process() {
         </div>
 
         {/* 3 */}
-        <div className="text-[#484848] w-1/4 ">
+        <div className="text-[#484848] md:w-1/4 ">
           <h3 className="text-4xl font-bold pb-4">3</h3>
           <h4 className="font-semibold text-md py-2">Payment</h4>
           <p className="text-sm">
@@ -44,7 +44,7 @@ export default function Process() {
         </div>
 
         {/* 4 */}
-        <div className="text-[#484848] w-1/4 ">
+        <div className="text-[#484848] md:w-1/4 ">
           <h3 className="text-4xl font-bold pb-4">4</h3>
           <h4 className="font-semibold text-md py-2">Get your keys!</h4>
           <p className="text-sm">

@@ -3,7 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
-import { Menu, MenuButton, Button, MenuList, MenuItem, IconButton } from "@chakra-ui/react";
+import {
+  Menu,
+  MenuButton,
+  Button,
+  MenuList,
+  MenuItem,
+  IconButton,
+} from "@chakra-ui/react";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { VscGitStashApply } from "react-icons/vsc";
@@ -37,22 +44,34 @@ export default function Navbar() {
         </div>
         <ul className="navbar-links navbar-center flex gap-6 text-[#A7A7A7]">
           <li>
-            <Link to="/" className="hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in">
+            <Link
+              to="/"
+              className="hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in"
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="/landlords/login" className="hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in">
+            <Link
+              to="/landlords/login"
+              className="hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in"
+            >
               Landlords
             </Link>
           </li>
           <li>
-            <Link to="/erasmus-life" className="hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in">
+            <Link
+              to="/erasmus-life"
+              className="hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in"
+            >
               Erasmus Life
             </Link>
           </li>
           <li>
-            <Link to="/about" className=" hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in">
+            <Link
+              to="/about"
+              className=" hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in"
+            >
               About Us
             </Link>
           </li>
@@ -240,38 +259,84 @@ export default function Navbar() {
           </Link>
         </div>
       </nav>
-
+      {/* MOBILE VIEW */}
       <nav>
         <div className="flex justify-between md:hidden px-2 py-1">
           <img src="/images/logo.svg" alt="logo" />
-           <Menu>
-            <MenuButton
-              as={IconButton}
-              aria-label="Options"
-              icon={          <IoMdMenu size={30} />}
-              variant="outline"
-            />
-            <MenuList>
-              <MenuItem as='a' href='/' >
-                Home
-              </MenuItem>
-              <MenuItem as='a' href='/landlords/login' >
-                Landlords
-              </MenuItem>
-              <MenuItem as='a' href='/about' >
-                About Us
-              </MenuItem>
-              <MenuItem as='a' href='/account' >
-                Accounts
-              </MenuItem>
-              <MenuItem as='a' href='/roomApplication' >
-                Room Applications
-              </MenuItem>
-              <MenuItem as='a' href='/login' onClick={handleSignOut} >
-                Sign out
-              </MenuItem>
-            </MenuList>
-          </Menu>
+
+          <div className="flex gap-2">
+            <div
+              onClick={() => setOpen(!open)}
+              className="ease-in-out duration-200"
+            >
+              {loading ? (
+                <span className="border-1 p-2">Loading...</span>
+              ) : user ? (
+                <Menu>
+                  <MenuButton
+                    bgColor="white"
+                    as={Button}
+                    rightIcon={<IoChevronDownOutline />}
+                  >
+                    {user.displayName || user.email}
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem
+                      icon={<RiAccountCircleLine />}
+                      as="a"
+                      href="/account"
+                    >
+                      Account
+                    </MenuItem>
+                    <MenuItem
+                      icon={<VscGitStashApply />}
+                      as="a"
+                      href="/roomApplication"
+                    >
+                      Room Applications
+                    </MenuItem>
+                    <MenuItem icon={<GrFavorite />} as="a" href="">
+                      Compare Favorites
+                    </MenuItem>
+                    <MenuItem
+                      onClick={handleSignOut}
+                      icon={<PiSignOutLight />}
+                      as="a"
+                      href="/login"
+                    >
+                      Sign Out
+                    </MenuItem>
+                  </MenuList>
+                </Menu>
+              ) : (
+                <Link
+                  to="/login"
+                  className="navbar-login hover:border-1 p-2 rounded-md"
+                >
+                  Login
+                </Link>
+              )}
+            </div>
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                aria-label="Options"
+                icon={<IoMdMenu size={30} />}
+                variant="outline"
+              />
+              <MenuList>
+                <MenuItem as="a" href="/">
+                  Home
+                </MenuItem>
+                <MenuItem as="a" href="/landlords/login">
+                  Landlords
+                </MenuItem>
+                <MenuItem as="a" href="/about">
+                  About Us
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </div>
         </div>
 
         {/* <div className="md:hidden">
