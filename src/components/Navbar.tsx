@@ -325,13 +325,13 @@ export default function Navbar() {
                 variant="outline"
               />
               <MenuList>
-                <MenuItem as="a" href="/">
+                <MenuItem as={Link} to="/">
                   Home
                 </MenuItem>
-                <MenuItem as="a" href="/landlords/login">
+                <MenuItem as={Link} to="/landlords/login">
                   Landlords
                 </MenuItem>
-                <MenuItem as="a" href="/about">
+                <MenuItem as={Link} to="/about">
                   About Us
                 </MenuItem>
               </MenuList>
