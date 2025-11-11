@@ -380,7 +380,7 @@ export default function RoomApplication() {
                         " status"
                       </span>
 
-                      {expandedId === booking.id ? (
+                      {expandedId === booking.roomId ? (
                         <ChevronUp className="text-gray-400" size={20} />
                       ) : (
                         <ChevronDown className="text-gray-400" size={20} />
@@ -389,7 +389,7 @@ export default function RoomApplication() {
                   </div>
 
                   {/* Expanded Details */}
-                  {expandedId === booking.id && (
+                  {expandedId === booking.roomId && (
                     <div className="border-t border-gray-200 bg-gray-50 p-4 space-y-4">
                       {/* Property Image */}
                       <div className="w-full">
