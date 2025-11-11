@@ -10,9 +10,11 @@ import * as Yup from "yup";
 import { auth, db } from "../../firebase";
 import { Link, useNavigate } from "react-router";
 import { doc, getDoc } from "firebase/firestore";
+import { useState } from "react";
 
 export default function LandlordLogin() {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="min-h-screen flex gap-10 w-full">
@@ -36,6 +38,7 @@ export default function LandlordLogin() {
           })}
           onSubmit={async (values, { setSubmitting, resetForm }) => {
             // Handle login logic here
+            setLoading(true);
             try {
               await setPersistence(
                 auth,
@@ -70,6 +73,7 @@ export default function LandlordLogin() {
               alert("Error logging in: " + (error as Error).message);
             } finally {
               setSubmitting(false);
+              setLoading(false);
             }
           }}
         >
@@ -125,7 +129,7 @@ export default function LandlordLogin() {
                 disabled={isSubmitting}
                 className="w-full py-3 bg-[#25409C] text-white rounded text-base cursor-pointer mb-4 hover:bg-blue-800 transition"
               >
-                Sign in
+                {loading ? "loading..." : "Sign in"}
               </button>
             </Form>
           )}

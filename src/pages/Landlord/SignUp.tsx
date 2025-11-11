@@ -9,6 +9,8 @@ import { auth, db } from "../../firebase";
 import { serverTimestamp } from "firebase/database";
 import { setDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 //import { Mail } from "tabler-icons-react";
 
 interface Values {
@@ -21,8 +23,8 @@ interface Values {
 }
 
 export default function LandlordSIgnUp() {
-
-    const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const initialValues = {
     name: "",
@@ -48,6 +50,7 @@ export default function LandlordSIgnUp() {
   });
 
   const handleSubmit = async (values: Values, { setSubmitting }: any) => {
+    setLoading(true);
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -64,9 +67,9 @@ export default function LandlordSIgnUp() {
       const user = userCredential.user;
       alert("Creating user successful");
 
-    //   await sendEmailVerification(user, {
-    //     url: "http://localhost:5173/",
-    //   });
+      //   await sendEmailVerification(user, {
+      //     url: "http://localhost:5173/",
+      //   });
 
       await setDoc(doc(db, "users", user.uid), {
         email: values.email,
@@ -74,19 +77,21 @@ export default function LandlordSIgnUp() {
         uid: user.uid,
         createdAt: serverTimestamp(),
       });
-      navigate("/landlords/dashboard")
-
+      navigate("/landlords/dashboard");
     } catch (error) {
       alert("Error signing up: " + (error as Error).message);
     } finally {
       setSubmitting(false);
+      setLoading(false);
     }
   };
 
   return (
     <div className="flex min-h-screen ">
       <div className="md:w-1/2 flex flex-col ml-8 pb-4 ">
-        <h2 className="text-2xl text-[#25409C] font-bold my-6 text-center">Sign Up</h2>
+        <h2 className="text-2xl text-[#25409C] font-bold my-6 text-center">
+          Sign Up
+        </h2>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -212,7 +217,7 @@ export default function LandlordSIgnUp() {
                 disabled={isSubmitting}
                 className="py-3 bg-[#25409C] text-white rounded font-semibold hover:bg-blue-700 transition-colors mt-2 disabled:opacity-50"
               >
-                Sign Up
+                {loading ? "loading..." : "Sign Up"}
               </button>
             </Form>
           )}
@@ -226,9 +231,10 @@ export default function LandlordSIgnUp() {
         </div>
         <div className="text-center text-sm">
           Already have an account?{" "}
-          <a href="/landlords/login" className="text-[#25409C] font-bold hover:underline">
+          {/* <a href="/landlords/login" className="text-[#25409C] font-bold hover:underline">
             Log in
-          </a>
+          </a> */}
+          <Link to="/landlords/login">Log in</Link>
         </div>
         {/* <div className="flex gap-6 justify-around items-center text-sm mt-2">
           <p>&copy; ErasmusLifeHousing</p>

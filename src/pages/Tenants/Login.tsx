@@ -8,9 +8,11 @@ import {
   browserLocalPersistence,
   browserSessionPersistence,
 } from "firebase/auth";
+import { useState } from "react";
 
 export default function Login() {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="flex min-h-screen font-sans text-[#484848]">
@@ -44,6 +46,7 @@ export default function Login() {
           })}
           onSubmit={async (values, { setSubmitting }) => {
             // Handle login logic here
+            setLoading(true);
             try {
               await setPersistence(
                 auth,
@@ -66,6 +69,7 @@ export default function Login() {
               alert("Error logging in: " + (error as Error).message);
             } finally {
               setSubmitting(false);
+              setLoading(false);
             }
           }}
         >
@@ -121,7 +125,7 @@ export default function Login() {
                 disabled={isSubmitting}
                 className="w-full py-3 bg-[#25409C] text-white rounded text-base cursor-pointer mb-4 hover:bg-blue-800 transition"
               >
-                Sign in
+                {loading? "loading...": "Sign in"}
               </button>
             </Form>
           )}
