@@ -26,7 +26,7 @@ const sortOptions = [
 export default function Listings() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const [sortBy, setSortBy] = useState("");
   const [rooms, setRooms] = useState<any>([]);
