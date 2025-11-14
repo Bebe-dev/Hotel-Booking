@@ -1,9 +1,9 @@
 export default function Achievement() {
   return (
-    <div  className="px-6 md:px-40 text-[#484848 font-semibold] flex justify-between items-center py-8">
+    <div  className="px-6 md:px-40 mb-10 text-[#484848 font-semibold] flex gap-14 justify-between items-center py-8">
       {/* LEFT HALF */}
       <div className="flex-1 hidden md:block">
-        <img src="images/achieve.svg" alt="achievement" />
+        <img src="images/achieve.png" alt="achievement" />
       </div>
 
       {/* RIGHT HALF */}

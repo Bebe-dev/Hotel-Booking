@@ -1,5 +1,5 @@
 import { Formik, Form, Field } from "formik";
-import { StackPush } from "tabler-icons-react";
+// import { StackPush } from "tabler-icons-react";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
@@ -27,7 +27,7 @@ export default function Hero() {
 
   const navigate = useNavigate();
   return (
-    <section className="relative md:flex min-h-[80vh] items-stretch">
+    <section className="relative md:flex gap-10 min-h-[80vh] items-stretch mb-6 py-2 px-10">
       {/* Left Half */}
       <div className="flex-1 px-8 pl-16 pt-12 pb-28 flex flex-col justify-center">
         <h1 className="text-4xl text-[#25409C] md:text-5xl font-bold mb-4">
@@ -59,7 +59,7 @@ export default function Hero() {
       {/* Right Half */}
       <div className="flex-1 relative flex items-center justify-center">
         <img
-          src="images/hero-image.svg"
+          src="images/hero-image.png"
           alt="Dream Accommodation"
           className="w-full h-auto rounded-xl shadow-lg object-cover"
         />
@@ -69,7 +69,7 @@ export default function Hero() {
       <div className="md:absolute md:left-1/2 md:bottom-8 md:-translate-x-1/2 w-[80%] bg-white rounded-2xl shadow-xl px-4 py-4 z-10 rounded-md border border-gray-300">
         <div className="flex items-center justify-between">
           <p className="font-semibold">Search for available rooms</p>
-          <StackPush />
+          
         </div>
 
         <Formik

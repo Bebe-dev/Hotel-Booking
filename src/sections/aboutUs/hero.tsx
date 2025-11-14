@@ -1,8 +1,8 @@
-import { ArrowNarrowDown } from "tabler-icons-react";
+//import { ArrowNarrowDown } from "tabler-icons-react";
 
 export default function Hero() {
   return (
-    <div className="px-6 md:px-40 text-[#484848 font-semibold] md:flex justify-between py-8">
+    <div className="px-6 md:px-40 mb-6 text-[#484848 font-semibold] md:flex justify-between py-8">
       {/* LEFT HALF */}
       <div className="flex-1">
         <h1 className="text-[#25409C]">About Us</h1>
@@ -25,9 +25,9 @@ export default function Hero() {
           want that your experience finding accommodation to be a negative point
           of that experience!
         </p>
-        <button className="rounded-3xl bg-[#EFF8FF] text-[#175CD3] w-[22%] flex gap-1 p-2 items-center hover:border transition">
+        {/* <button className="rounded-3xl bg-[#EFF8FF] text-[#175CD3] w-fit flex gap-1 p-2 items-center hover:border transition">
           Show more <ArrowNarrowDown color="#175CD3" />
-        </button>
+        </button> */}
       </div>
     </div>
   );

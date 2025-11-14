@@ -100,7 +100,7 @@ export default function Testimonials({variant} : {variant: "home" | "about"} ) {
           <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l to-transparent"></div>
         </div>
 
-        <button className={`${variant=== "about"? "text-[#25409C] bg-[#D6DBEC]" : " bg-white text-[#344054]"} mx-auto mt-4 mb-8 block px-6 py-3 border border-[#D0D5DD] rounded-md font-medium text-sm hover:cursor-pointer hover:text-base transition`}>
+        <button className={`${variant=== "about"? "text-[#25409C] bg-[#D6DBEC]" : " bg-white text-[#344054]"} mx-auto mt-4 mb-8 block px-6 py-3 border border-[#D0D5DD] rounded-md font-medium text-sm hover:cursor-pointer hover:text-base transition ease-in`}>
           Read More 
         </button>
       </div>

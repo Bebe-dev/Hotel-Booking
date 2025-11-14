@@ -61,10 +61,10 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              to="/erasmus-life"
+              to=""
               className="hover:bg-[#E2E8F0] hover:text-black rounded-md p-2 transition ease-in"
             >
-              Erasmus Life
+              Erasmus Life     
             </Link>
           </li>
           <li>
@@ -95,26 +95,26 @@ export default function Navbar() {
                 <MenuList>
                   <MenuItem
                     icon={<RiAccountCircleLine />}
-                    as="a"
-                    href="/account"
+                    as={Link}
+                    to="/account"
                   >
                     Account
                   </MenuItem>
                   <MenuItem
                     icon={<VscGitStashApply />}
-                    as="a"
-                    href="/roomApplication"
+                    as={Link}
+                    to="/roomApplication"
                   >
                     Room Applications
                   </MenuItem>
-                  <MenuItem icon={<GrFavorite />} as="a" href="">
+                  {/* <MenuItem icon={<GrFavorite />} as="a" href="">
                     Compare Favorites
-                  </MenuItem>
+                  </MenuItem> */}
                   <MenuItem
                     onClick={handleSignOut}
                     icon={<PiSignOutLight />}
-                    as="a"
-                    href="/login"
+                    as={Link}
+                    to="/login"
                   >
                     Sign Out
                   </MenuItem>
@@ -290,8 +290,8 @@ export default function Navbar() {
                     </MenuItem>
                     <MenuItem
                       icon={<VscGitStashApply />}
-                      as="a"
-                      href="/roomApplication"
+                      as={Link}
+                      to="/roomApplication"
                     >
                       Room Applications
                     </MenuItem>
@@ -301,8 +301,8 @@ export default function Navbar() {
                     <MenuItem
                       onClick={handleSignOut}
                       icon={<PiSignOutLight />}
-                      as="a"
-                      href="/login"
+                      as={Link}
+                      to="/login"
                     >
                       Sign Out
                     </MenuItem>

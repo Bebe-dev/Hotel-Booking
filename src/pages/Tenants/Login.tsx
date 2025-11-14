@@ -9,6 +9,8 @@ import {
   browserSessionPersistence,
 } from "firebase/auth";
 import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa6";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -134,29 +136,16 @@ export default function Login() {
         {/* Social Login */}
         <div className="w-1/2 max-w-xs flex gap-3 mb-5">
           <button className="flex-1 py-2 border border-gray-300 rounded bg-white cursor-pointer flex items-center justify-center gap-2 hover:bg-gray-50 transition">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png"
-              alt="Google"
-              className="w-5 h-5"
-            />
+            <FcGoogle size={24} />
           </button>
           <button className="flex-1 py-2 border border-gray-300 rounded bg-white cursor-pointer flex items-center justify-center gap-2 hover:bg-gray-50 transition">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-              alt="Facebook"
-              className="w-5 h-5"
-            />
+            <FaFacebook color="blue" size={24} />
           </button>
         </div>
         {/* Don't have an account */}
         <div className="text-sm">
           Don't have an account?{" "}
-          {/* <a
-            href="/signup"
-            className="text-[#25409C] hover:underline font-medium"
-          >
-            Sign up
-          </a> */}
+          
           <Link
             className="text-[#25409C] hover:underline font-medium"
             to="/signup"

@@ -6,7 +6,11 @@ import Select from "react-select";
 import countryList from "react-select-country-list";
 import { useEffect, useMemo, useState } from "react";
 import { deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
-import { deleteUser, EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
+import {
+  deleteUser,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+} from "firebase/auth";
 import { useNavigate } from "react-router";
 
 export default function Account() {
@@ -37,27 +41,27 @@ export default function Account() {
   };
 
   const handleDeleteAccount = async () => {
-    if(!user) return alert("No user logged in")
+    if (!user) return alert("No user logged in");
 
-      const password = prompt("Please confirm your password to delete your account")
-      if(!password) return
+    const password = prompt(
+      "Please confirm your password to delete your account"
+    );
+    if (!password) return;
 
-      const credential = EmailAuthProvider.credential(user.email!, password)
+    const credential = EmailAuthProvider.credential(user.email!, password);
 
-      try{
+    try {
+      await reauthenticateWithCredential(user, credential);
 
-        await reauthenticateWithCredential(user, credential)
-
-
-        await deleteUser(user);
-        await deleteDoc(doc(db, "users", user.uid));
-        navigate("/login")
-        alert("Account deleted successfully")
-      } catch (error) {
-        console.error("Error deleting account", error);
-        alert("Failed to delete account");
-      }
-  }
+      await deleteUser(user);
+      await deleteDoc(doc(db, "users", user.uid));
+      navigate("/login");
+      alert("Account deleted successfully");
+    } catch (error) {
+      console.error("Error deleting account", error);
+      alert("Failed to delete account");
+    }
+  };
 
   useEffect(() => {
     if (!user) return;
@@ -99,7 +103,12 @@ export default function Account() {
             }`}
           >
             {preview ? (
-              <img src={preview} width="60%" alt="profle-picture" className="absolute w-full h-full rounded-lg" />
+              <img
+                src={preview}
+                width="60%"
+                alt="profle-picture"
+                className="absolute w-full h-full rounded-lg"
+              />
             ) : (
               <img
                 src="images/profile-pic.png"
@@ -108,23 +117,24 @@ export default function Account() {
                 className="absolute w-full h-full rounded-lg"
               />
             )}
-
-            
           </div>
-          
+
           <p>{user?.displayName}</p>
           <p className="text-[#6C6C6C] ">{user?.email}</p>
           <button className="relative bg-[#25409C] w-full h-full p-2 text-white rounded-md cursor-pointer">
             Upload Picture
             <input
-            type="file"
-            onChange={handleImageUpload}
-            className="absolute w-full h-full opacity-0 left-0 cursor-pointer"
-          />
+              type="file"
+              onChange={handleImageUpload}
+              className="absolute w-full h-full opacity-0 left-0 cursor-pointer"
+            />
           </button>
         </div>
 
-        <button onClick={handleDeleteAccount} className="absolute bottom-4 bg-[#AA2117] p-2 text-white rounded-md">
+        <button
+          onClick={handleDeleteAccount}
+          className="absolute bottom-4 bg-[#AA2117] p-2 text-white rounded-md"
+        >
           Delete Account
         </button>
       </div>
@@ -146,6 +156,8 @@ export default function Account() {
             school: accountForm.school || "",
             funding: accountForm.funding || "",
             about: accountForm.about || "",
+            documents1: accountForm.documents1 || "",
+            documents2: accountForm.documents2 || "",
           }}
           validationSchema={Yup.object({
             firstName: Yup.string().max(15, "Must be 15 characters or less"),
@@ -517,14 +529,28 @@ export default function Account() {
                 <Field
                   name="documents1"
                   type="file"
+                  disabled={editSection !== "additional"}
+                  value={accountForm.documents1 || ""}
+                  onChange={handleChange}
                   placeholder="Upload File"
-                  className="border-2 border-[#D0D5DD] rounded-md p-2 mb-1 placeholder-[#667085] text-sm"
+                  className={`border-2 border-[#D0D5DD] rounded-md p-2 placeholder-[#667085] text-sm ${
+                    editSection !== "additional"
+                      ? "bg-gray-100 cursor-not-allowed"
+                      : ""
+                  }`}
                 />
                 <Field
                   name="documents2"
                   type="file"
+                  disabled={editSection !== "additional"}
+                  value={accountForm.documents2 || ""}
+                    onChange={handleChange}
                   placeholder="Upload File"
-                  className="border-2 border-[#D0D5DD] rounded-md p-2 placeholder-[#667085] text-sm"
+                  className={`border-2 border-[#D0D5DD] rounded-md p-2 placeholder-[#667085] text-sm ${
+                    editSection !== "additional"
+                      ? "bg-gray-100 cursor-not-allowed"
+                      : ""
+                  }`}
                 />
               </div>
             </div>

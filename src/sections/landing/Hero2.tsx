@@ -7,11 +7,11 @@ const highlights = [
 
 export default function Hero2() {
     return (
-        <section className="flex min-h-[70vh]">
+        <section className="flex gap-10 min-h-[70vh] px-20 mb-6">
             {/* Left Half - Image */}
             <div className="hidden md:block flex-1 min-h-[400px]">
                 <img
-                    src="images/hero2-image.svg"
+                    src="images/hero2-image.png"
                     alt="Hotel"
                     className="w-full h-full object-cover"
                 />

@@ -26,7 +26,7 @@ const sortOptions = [
 export default function Listings() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   const [sortBy, setSortBy] = useState("");
   const [rooms, setRooms] = useState<any>([]);
@@ -87,8 +87,8 @@ export default function Listings() {
     if (filterValues.amenities.length > 0) {
       filtered = filtered.filter((room: any) =>
         filterValues.amenities.every((amenity: any) =>
-          room.facilities
-            ?.map((a: any) => a.value.toLowerCase())
+          room.amenities
+            ?.map((a: any) => a.toLowerCase())
             .includes(amenity)
         )
       );
@@ -220,12 +220,12 @@ export default function Listings() {
                       <Field type="checkbox" name="area" value="anjos" />
                       Anjos
                     </label>
-                    <button
+                    {/* <button
                       type="button"
-                      className="w-25 text-[#25409C] bg-[#D6DBEC] rounded-3xl"
+                      className="w-fit text-[#25409C] bg-[#D6DBEC] rounded-3xl"
                     >
                       Show more
-                    </button>
+                    </button> */}
                   </div>
 
                   {/* ROOM TYPE */}
@@ -251,12 +251,12 @@ export default function Listings() {
                       />
                       Private Room
                     </label>
-                    <button
+                    {/* <button
                       type="button"
                       className="w-25 text-[#25409C] bg-[#D6DBEC] rounded-3xl"
                     >
                       Show more
-                    </button>
+                    </button> */}
                   </div>
 
                   {/* AMENITIES */}
@@ -302,12 +302,12 @@ export default function Listings() {
                       />
                       Private bathroom
                     </label>
-                    <button
+                    {/* <button
                       type="button"
                       className="w-25 text-[#25409C] bg-[#D6DBEC] rounded-3xl"
                     >
                       Show more
-                    </button>
+                    </button> */}
                   </div>
                 </Form>
               );
@@ -367,7 +367,7 @@ export default function Listings() {
                     name={room.apartment}
                     price={room.pricePerMonth}
                     address={room.location}
-                    image="/images/room1.svg"
+                    image="/images/room1.png"
                     billsIncluded={room.billsIncluded}
                     ellVerified={room.ellVerified}
                     

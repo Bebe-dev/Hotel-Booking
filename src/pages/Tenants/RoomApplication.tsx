@@ -155,7 +155,7 @@ export default function RoomApplication() {
             {bookings.map((booking: any) => (
               <div key={booking.roomId}>
                 <Accordion allowToggle>
-                  <AccordionItem>
+                  <AccordionItem marginBottom={3}>
                     <h2>
                       <AccordionButton bg="#EAECF0">
                         <Box

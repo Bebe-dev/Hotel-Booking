@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router";
 //import { roomsGrid } from "../../data/roomsGrid";
 import ErrorPage from "./ErrorPage";
-import BlueButton from "../../components/blueButton";
+//import BlueButton from "../../components/blueButton";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../firebase";
 import {
@@ -11,9 +11,9 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { Tag, TagLabel, TagLeftIcon } from "@chakra-ui/react";
+import { Tag, TagLabel } from "@chakra-ui/react";
 import Map from "../../components/map";
-import { iconMap } from "../../utils/iconMap";
+//import { iconMap } from "../../utils/iconMap";
 import { useEffect, useState } from "react";
 
 export default function RoomDetails() {
@@ -188,7 +188,7 @@ export default function RoomDetails() {
               soluta magnam tempore id optio eum dolores, nostrum quisquam ipsa
               quod doloribus.
             </p>
-            <BlueButton />
+            {/* <BlueButton /> */}
           </div>
 
           {/* FACILITIES */}
@@ -196,16 +196,16 @@ export default function RoomDetails() {
             <h2 className="font-bold text-lg">Facilities</h2>
             <div className="grid grid-cols-3 gap-2 md:flex justify-between items-center my-3">
               {room.amenities?.map((amenity: any) => {
-                const IconComponent = iconMap[amenity.icon];
+                // const IconComponent = iconMap[amenity.icon];
                 return (
                   <Tag bg="#F2F4F7" key={amenity}>
-                    <TagLeftIcon as={IconComponent} />
+                    {/* <TagLeftIcon as={IconComponent} /> */}
                     <TagLabel pl="6px">{amenity}</TagLabel>
                   </Tag>
                 );
               })}
             </div>
-            <BlueButton />
+            {/* <BlueButton /> */}
           </div>
 
           {/* AVAILABILITY */}
@@ -248,10 +248,10 @@ export default function RoomDetails() {
             <h2 className="font-bold text-lg">Landlord Rules</h2>
             <div className="grid grid-cols-3 gap-2 md:flex justify-between items-center">
               {room.rules.map((rule: any) => {
-                const IconComponent = iconMap[rule.icon];
+                // const IconComponent = iconMap[rule.icon];
                 return (
                   <Tag bg="#F2F4F7" key={rule.value}>
-                    <TagLeftIcon as={IconComponent} />
+                    {/* <TagLeftIcon as={IconComponent} /> */}
                     <TagLabel pl="6px">{rule}</TagLabel>
                   </Tag>
                 );
