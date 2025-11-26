@@ -1,6 +1,6 @@
 export default function Process() {
   return (
-    <section>
+    <section className="md:px-16">
       <div className="text-center mb-4 pt-10">
         <h1 className="text-[#25409C] text-base font-bold">Reservation Process</h1>
         <h2 className="text-[#1D2939 font-bold text-xl py-2">
@@ -8,7 +8,7 @@ export default function Process() {
         </h2>
       </div>
 
-      <div className="md:flex justify-between gap-6 px-4 md:px-20 py-10">
+      <div className="md:flex justify-between gap-6 px-4 py-10">
         {/* 1 */}
         <div className="text-[#484848] md:w-1/4 ">
           <h3 className="text-4xl font-bold pb-4">1</h3>

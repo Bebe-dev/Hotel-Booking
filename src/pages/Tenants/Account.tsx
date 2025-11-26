@@ -12,6 +12,7 @@ import {
   reauthenticateWithCredential,
 } from "firebase/auth";
 import { useNavigate } from "react-router";
+import { Switch } from "@chakra-ui/react";
 
 export default function Account() {
   const [user] = useAuthState(auth);
@@ -94,18 +95,18 @@ export default function Account() {
   const occupations = ["Study", "Work"];
 
   return (
-    <div className="relative px-2 md:px-30 pb-6 flex justify-around">
+    <div className="relative px-2 md:px-20 md:py-15 pb-6 flex justify-between">
       <div>
-        <div className="relative w-full text-center">
+        <div className="relative w-full text-center flex flex-col gap-3">
           <div
-            className={`relative h-32 ${
+            className={`relative h-52 ${
               image ? "border-blue-500" : "border-[#D0D5DD]"
             }`}
           >
             {preview ? (
               <img
                 src={preview}
-                width="60%"
+                width="40%"
                 alt="profle-picture"
                 className="absolute w-full h-full rounded-lg"
               />
@@ -114,12 +115,12 @@ export default function Account() {
                 src="images/profile-pic.png"
                 width="60%"
                 alt="profle-picture"
-                className="absolute w-full h-full rounded-lg"
+                className="absolute w-full h-full rounded-full"
               />
             )}
           </div>
 
-          <p>{user?.displayName}</p>
+          <p className="font-bold">{user?.displayName}</p>
           <p className="text-[#6C6C6C] ">{user?.email}</p>
           <button className="relative bg-[#25409C] w-full h-full p-2 text-white rounded-md cursor-pointer">
             Upload Picture
@@ -129,6 +130,23 @@ export default function Account() {
               className="absolute w-full h-full opacity-0 left-0 cursor-pointer"
             />
           </button>
+          <div className="flex flex-col gap-2 ">
+            <p className="font-bold">Notifications Center</p>
+            <div className="pl-[25%] space-y-2">
+              <div className="flex gap-2">
+                <Switch color="#25409C" />
+                <p>SMS</p>
+              </div>
+              <div className="flex gap-2">
+                <Switch style={{ color: "#25409C" }} />
+                <p>Email</p>
+              </div>
+              <div className="flex gap-2">
+                <Switch color="#25409C" />
+                <p>Phone</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <button
@@ -208,22 +226,22 @@ export default function Account() {
           //   }, 400);
           // }}
         >
-          <Form className="flex flex-col gap-4">
-            <div>
+          <Form className="flex flex-col gap-6">
+            <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <h1 className="font-bold text-lg">Basic Info</h1>
                 <button
                   type="button"
                   onClick={() => toggleEdit("basic")}
-                  className={`p-2 text-xs text-white rounded-md ${
+                  className={`p-2 px-4  text-white rounded-md ${
                     editSection === "basic" ? "bg-gray-400" : "bg-[#25409C]"
                   }`}
                 >
                   {editSection === "basic" ? "Cancel" : "Edit"}
                 </button>
               </div>
-              <div className="flex justify-between gap-2">
-                <div className="flex flex-1 flex-col w-1/2">
+              <div className="flex justify-between gap-6">
+                <div className="flex flex-1 flex-col gap-2 w-1/2">
                   <label htmlFor="firstName">First Name</label>
                   <Field
                     name="firstName"
@@ -245,7 +263,7 @@ export default function Account() {
                   />
                 </div>
 
-                <div className="flex flex-1 flex-col w-1/2">
+                <div className="flex flex-1 gap-2 flex-col w-1/2">
                   <label htmlFor="Surname">Surname</label>
                   <Field
                     name="Surname"
@@ -268,7 +286,7 @@ export default function Account() {
                 </div>
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="gender">Gender</label>
                 <Field
                   name="gender"
@@ -290,7 +308,7 @@ export default function Account() {
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="email">Email Address</label>
                 <Field
                   name="email"
@@ -312,7 +330,7 @@ export default function Account() {
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="number">Telephone number</label>
                 <Field
                   name="number"
@@ -334,7 +352,7 @@ export default function Account() {
                 />
               </div>
 
-              <div>
+              <div className="space-y-2">
                 <label>Nationality</label>
                 <Select
                   options={options}
@@ -358,7 +376,7 @@ export default function Account() {
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="address">Current Address</label>
                 <Field
                   name="address"
@@ -388,7 +406,7 @@ export default function Account() {
                 <button
                   type="button"
                   onClick={() => toggleEdit("request")}
-                  className={`p-2 text-xs text-white rounded-md ${
+                  className={`p-2 px-4 text-white rounded-md ${
                     editSection === "request" ? "bg-gray-400" : "bg-[#25409C]"
                   }`}
                 >
@@ -402,7 +420,7 @@ export default function Account() {
                 disabled={editSection !== "request"}
                 value={accountForm.description || ""}
                 onChange={handleChange}
-                className={`border-2 border-[#D0D5DD] rounded-md p-2 placeholder-[#667085] text-sm ${
+                className={`border-2 border-[#D0D5DD] rounded-md p-2 placeholder-[#667085] text-sm w-full ${
                   editSection !== "request"
                     ? "bg-gray-100 cursor-not-allowed"
                     : ""
@@ -412,7 +430,7 @@ export default function Account() {
             </div>
 
             {/* ADDITIONAL DETAILS & DOCUMENTS */}
-            <div>
+            <div className=" flex flex-col gap-6">
               <div className="flex justify-between items-center mb-2">
                 <h1 className="font-bold text-lg">
                   Additional Details & Documents
@@ -420,7 +438,7 @@ export default function Account() {
                 <button
                   type="button"
                   onClick={() => toggleEdit("additional")}
-                  className={`p-2 text-xs text-white rounded-md ${
+                  className={`p-2 px-4 text-white rounded-md ${
                     editSection === "additional"
                       ? "bg-gray-400"
                       : "bg-[#25409C]"
@@ -430,7 +448,7 @@ export default function Account() {
                 </button>
               </div>
 
-              <div>
+              <div className="flex flex-col gap-2">
                 <label>Do You Study or Work</label>
                 <Field
                   as="select"
@@ -457,7 +475,7 @@ export default function Account() {
                 </Field>
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="school">Where are you Studying?</label>
                 <Field
                   name="school"
@@ -479,7 +497,7 @@ export default function Account() {
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="funding">How will you fund your stay</label>
                 <Field
                   name="funding"
@@ -501,7 +519,7 @@ export default function Account() {
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="about">Tell Us About Yourself</label>
                 <Field
                   name="about"
@@ -524,7 +542,7 @@ export default function Account() {
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <label htmlFor="documents">Documents (Password/ID Card</label>
                 <Field
                   name="documents1"
@@ -544,7 +562,7 @@ export default function Account() {
                   type="file"
                   disabled={editSection !== "additional"}
                   value={accountForm.documents2 || ""}
-                    onChange={handleChange}
+                  onChange={handleChange}
                   placeholder="Upload File"
                   className={`border-2 border-[#D0D5DD] rounded-md p-2 placeholder-[#667085] text-sm ${
                     editSection !== "additional"

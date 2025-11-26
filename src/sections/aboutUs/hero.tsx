@@ -2,11 +2,11 @@
 
 export default function Hero() {
   return (
-    <div className="px-6 md:px-40 mb-6 text-[#484848 font-semibold] md:flex justify-between py-8">
+    <div className="mx-2 md:mx-20 md:my-30 mt-20 mb-6 text-[#484848 font-semibold] md:flex justify-between py-8">
       {/* LEFT HALF */}
       <div className="flex-1">
         <h1 className="text-[#25409C]">About Us</h1>
-        <h2 className="text-[#484848] font-bold text-3xl w-3/4">
+        <h2 className="text-[#484848] font-bold text-3xl w-2/3 leading-10">
           Erasmus Life Housing - your go-to hub for finding the perfect home for
           students, by students
         </h2>

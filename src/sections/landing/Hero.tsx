@@ -17,7 +17,7 @@ const budgets = [
   { value: "601-1000", label: "$601 - $1000" },
 ];
 
-const HeroSchema = Yup.object().shape({
+const ValidationSchema = Yup.object().shape({
   location: Yup.string().required("Location is required"),
   budget: Yup.string().required("Budget is required"),
   checkIn: Yup.date().required("Check-in date is required"),
@@ -27,9 +27,9 @@ export default function Hero() {
 
   const navigate = useNavigate();
   return (
-    <section className="relative md:flex gap-10 min-h-[80vh] items-stretch mb-6 py-2 px-10">
+    <section className="relative md:flex gap-10 min-h-[80vh] items-stretch md:mb-12 py-2 mx-2 md:mx-20">
       {/* Left Half */}
-      <div className="flex-1 px-8 pl-16 pt-12 pb-28 flex flex-col justify-center">
+      <div className="flex-1 pt-12 md:pb-28 flex flex-col justify-center">
         <h1 className="text-4xl text-[#25409C] md:text-5xl font-bold mb-4">
           Find your future
         </h1>
@@ -59,9 +59,9 @@ export default function Hero() {
       {/* Right Half */}
       <div className="flex-1 relative flex items-center justify-center">
         <img
-          src="images/hero-image.png"
+          src="images/hero-image.jpg"
           alt="Dream Accommodation"
-          className="w-full h-auto rounded-xl shadow-lg object-cover"
+          className="w-full h-auto shadow-lg object-cover"
         />
       </div>
 
@@ -78,7 +78,7 @@ export default function Hero() {
             budget: "",
             checkIn: "",
           }}
-          validationSchema={HeroSchema}
+          validationSchema={ValidationSchema}
           onSubmit={(values) => {
             const query = new URLSearchParams(values).toString();
             navigate(`/listings?${query}`)

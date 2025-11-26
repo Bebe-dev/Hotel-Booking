@@ -261,7 +261,7 @@ export default function RoomModal({
                       <Field
                         name="propertyTitle"
                         type="text"
-                        className="border border-2 border-[#D0D5DD] rounded-md  "
+                        className="border border-2 border-[#D0D5DD] rounded-md p-1 "
                       />
                       <ErrorMessage
                         name="propertyTitle"
@@ -275,7 +275,7 @@ export default function RoomModal({
                       <Field
                         name="apartment"
                         type="text"
-                        className="border border-2 border-[#D0D5DD] rounded-md  "
+                        className="border border-2 border-[#D0D5DD] rounded-md p-1 "
                       />
                       <ErrorMessage
                         name="apartment"
@@ -289,7 +289,7 @@ export default function RoomModal({
                       <Field
                         name="location"
                         type="text"
-                        className="border border-2 border-[#D0D5DD] rounded-md  "
+                        className="border border-2 border-[#D0D5DD] rounded-md p-1 "
                       />
                       <ErrorMessage
                         name="location"
@@ -303,7 +303,7 @@ export default function RoomModal({
                       <Field
                         name="minimumStay"
                         type="text"
-                        className="border border-2 border-[#D0D5DD] rounded-md  "
+                        className="border border-2 border-[#D0D5DD] rounded-md p-1 "
                       />
                       <ErrorMessage
                         name="minimumStay"
@@ -318,7 +318,7 @@ export default function RoomModal({
                         as="textarea"
                         name="description"
                         type="text"
-                        className="border border-2 border-[#D0D5DD] rounded-md  "
+                        className="border border-2 border-[#D0D5DD] rounded-md p-1 "
                       />
                       <ErrorMessage
                         name="description"
@@ -333,7 +333,7 @@ export default function RoomModal({
                         <Field
                           name="roomNumber"
                           type="number"
-                          className="border border-2 border-[#D0D5DD] rounded-md  "
+                          className="border border-2 border-[#D0D5DD] rounded-md p-1 "
                         />
                         <ErrorMessage
                           name="roomNumber"
@@ -347,7 +347,7 @@ export default function RoomModal({
                         <Field
                           name="bathroomNumber"
                           type="number"
-                          className="border border-2 border-[#D0D5DD] rounded-md  "
+                          className="border border-2 border-[#D0D5DD] rounded-md p-1 "
                         />
                         <ErrorMessage
                           name="bathroomNumber"
@@ -362,7 +362,7 @@ export default function RoomModal({
                       
                           name="squareArea"
                           type="number"
-                          className="border border-2 border-[#D0D5DD] rounded-md  "
+                          className="border border-2 border-[#D0D5DD] rounded-md p-1 "
                         />
                         <ErrorMessage
                           name="squareArea"
@@ -384,6 +384,7 @@ export default function RoomModal({
                                 name="amenities"
                                 type="checkbox"
                                 value={amenity}
+                                className="text-sm"
                               />{" "}
                               {amenity}
                             </label>

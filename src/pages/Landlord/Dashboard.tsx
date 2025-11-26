@@ -9,7 +9,7 @@ export default function Dashboard() {
 
   const [user] = useAuthState(auth);
   return (
-    <div className="w-full">
+    <div className="w-full md:px-10 md:pb-10">
       <div className="pr-4 py-4 flex flex-col flex-1 gap-4">
         <div>
           <h2 className="text-[#484848] text-xl font-semibold">

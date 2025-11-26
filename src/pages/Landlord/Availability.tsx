@@ -68,7 +68,7 @@ export default function Availability() {
   }, []);
 
   return (
-    <div className="h-screen p-6">
+    <div className="h-screen p-6 md:px-10">
       <h2 className="text-2xl font-semibold mb-4">Room Availability</h2>
 
       <div className="grid grid-cols-[200px_repeat(12,1fr)] items-center gap-1 pb-2">

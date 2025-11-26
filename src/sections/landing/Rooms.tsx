@@ -62,7 +62,7 @@ const rooms: Room[] = [
 ];
 
 const RoomCard: React.FC<{ room: Room }> = ({ room }) => (
-  <div className="border border-gray-200 rounded-xl overflow-hidden shadow-md bg-white w-[300px] mx-auto flex flex-col">
+  <div className="border border-gray-200 rounded-xl overflow-hidden shadow-md bg-white w-[100%] mx-auto flex flex-col">
     <img
       src={room.image}
       alt={room.name}
@@ -98,12 +98,12 @@ const RoomCard: React.FC<{ room: Room }> = ({ room }) => (
 
 export default function Rooms() {
   return (
-    <section className="py-10">
+    <section className="py-10 mx-2 md:mx-20">
       <div className=" mx-auto">
-        <h2 className="text-2xl font-bold mb-8 text-center">
+        <h2 className="text-2xl font-bold mb-8">
           Reserve The Finest Rooms{" "}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {rooms.map((room) => (
             <RoomCard key={room.id} room={room} />
           ))}

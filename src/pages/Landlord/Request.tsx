@@ -7,7 +7,7 @@ import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 
 export default function Request() {
   return (
-    <div className="w-full pr-4 text-[#484848]">
+    <div className="w-full md:px-10 md:pt-5 md:pb-10 pr-4 text-[#484848]">
       <div className="flex justify-end py-4 pr-6">
         <div className=" flex items-center gap-2 border-2 border-[#D0D5DD] p-2  rounded-md lg:w-1/5 ">
           <IoSearch size={20} />

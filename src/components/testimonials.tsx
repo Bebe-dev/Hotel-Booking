@@ -1,33 +1,32 @@
-export default function Testimonials({variant} : {variant: "home" | "about"} ) {
-  
+export default function Testimonials({
+  variant,
+}: {
+  variant: "home" | "about";
+}) {
   const cardsData = [
     {
-      image:
-        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+      image: "/images/testimonial2.png",
       name: "Briar Martin",
       handle: "@neilstellar",
       review:
         "Highly recommended. I came across this platform during my Erasmus program. The customer support was exceptional - they were prompt and helpful in answering all my queries.Thanks to Erasmus Life Housing, I found the perfect accommodation. ",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
+      image: "/images/testimonial1.png",
       name: "Serena Johnson",
       handle: "@serena",
       review:
         "Erasmus Life Housing deserves a huge shoutout for making my housing search that comfortable., I was initially worried about finding accommodation in Lisbon, but this Erasmus Life Housing made the process stress-free.  Five stars!",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60",
+      image: "/images/testimonial2.png",
       name: "Ilias Elfhassi",
       handle: "@jordantalks",
       review:
         "Erasmus Life Housing deserves a huge shoutout for making my housing search that comfortable., I was initially worried about finding accommodation in Lisbon, but this Erasmus Life Housing made the process stress-free.  Five stars!",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+      image: "/images/testimonial1.png",
       name: "Avery Smith",
       handle: "@averywrites",
       review:
@@ -43,7 +42,13 @@ export default function Testimonials({variant} : {variant: "home" | "about"} ) {
   };
 
   const CreateCard = ({ card }: { card: Card }) => (
-    <div className={ variant === "home" ? "p-4 bg-[#25409C] text-white rounded-md mx-4 shadow hover:shadow-lg transition-all duration-200 w-100 shrink-0" : "p-4 bg-white text-[#6C6B6B] rounded-md mx-4 shadow hover:shadow-lg transition-all duration-200 w-100 shrink-0" }>
+    <div
+      className={
+       `p-4 rounded-md mx-4 shadow hover:shadow-lg transition-all duration-200 md:w-[15%] shrink-0 ${variant === "home"
+          ? "bg-[#25409C] text-white"
+          : "bg-white text-[#6C6B6B]"
+      }`}
+    >
       <div className="flex gap-2">
         <img
           className="size-11 rounded-full"
@@ -80,7 +85,7 @@ export default function Testimonials({variant} : {variant: "home" | "about"} ) {
             }
         `}</style>
 
-      <div>
+      <div className="mr-4 md:mr-0 md:my-30">
         <div className="text-center mt-10">
           <h1 className="text-[#25409C] font-semibold text-sm text-center">
             Testimonials
@@ -90,19 +95,31 @@ export default function Testimonials({variant} : {variant: "home" | "about"} ) {
           </h2>
         </div>
         {/* marquee */}
-        <div className="marquee-row w-full mx-auto max-w-7xl overflow-hidden relative">
+        <div className="marquee-scroll marquee-row w-full mx-auto max-w-8xl overflow-hidden relative">
           <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r to-transparent"></div>
-          <div className="marquee-inner flex transform-gpu min-w-[200%] pt-10 pb-5">
+          <div className="hidden marquee-inner md:flex transform-gpu min-w-[200%] pt-10 pb-5">
             {[...cardsData, ...cardsData].map((card, index) => (
+              <CreateCard key={index} card={card} />
+            ))}
+          </div>
+          {/* MOBILE VIEW */}
+          <div className="md:hidden pt-10 pb-5 space-y-4">
+            {[...cardsData ].map((card, index) => (
               <CreateCard key={index} card={card} />
             ))}
           </div>
           <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l to-transparent"></div>
         </div>
 
-        <button className={`${variant=== "about"? "text-[#25409C] bg-[#D6DBEC]" : " bg-white text-[#344054]"} mx-auto mt-4 mb-8 block px-6 py-3 border border-[#D0D5DD] rounded-md font-medium text-sm hover:cursor-pointer hover:text-base transition ease-in`}>
-          Read More 
-        </button>
+        {/* <button
+          className={`${
+            variant === "about"
+              ? "text-[#25409C] bg-[#D6DBEC]"
+              : " bg-white text-[#344054]"
+          } mx-auto mt-4 mb-8 block px-6 py-3 border border-[#D0D5DD] rounded-md font-medium text-sm hover:cursor-pointer hover:text-base transition ease-in-out duration-200`}
+        >
+          Read More
+        </button> */}
       </div>
     </>
   );

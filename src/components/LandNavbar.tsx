@@ -9,7 +9,7 @@ export default function LandNavbar() {
     const [user, loading] = useAuthState(auth)
     return(
         <div className="bg-[#FAFAFA]">
-            <nav className="flex justify-between items-center p-4 md:px-18">
+            <nav className="flex justify-between items-center p-4 md:px-6">
                 <img src="/images/logo.svg" alt="Logo" height={40} />
                 <div className=" flex gap-2 items-center bg-white p-2 rounded-md">
                     <IoPersonOutline />

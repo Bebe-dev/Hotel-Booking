@@ -7,7 +7,7 @@ const highlights = [
 
 export default function Hero2() {
     return (
-        <section className="flex gap-10 min-h-[70vh] px-20 mb-6">
+        <section className="flex gap-14 min-h-[70vh] mx-2 md:mx-20 md:mt-20 md:mb-18">
             {/* Left Half - Image */}
             <div className="hidden md:block flex-1 min-h-[400px]">
                 <img
@@ -17,7 +17,7 @@ export default function Hero2() {
                 />
             </div>
             {/* Right Half - Content */}
-            <div className="flex-1 px-8 py-12 flex flex-col justify-center">
+            <div className="flex-1 py-12 flex flex-col justify-center">
                 <h1 className="text-4xl font-bold mb-4">
                     We Help Students Find Their Perfect Home
                 </h1>

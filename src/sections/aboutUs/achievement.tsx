@@ -1,6 +1,6 @@
 export default function Achievement() {
   return (
-    <div  className="px-6 md:px-40 mb-10 text-[#484848 font-semibold] flex gap-14 justify-between items-center py-8">
+    <div  className="px-6 md:mx-20 md:my-30 mx-2 mb-10 text-[#484848 font-semibold] flex gap-14 justify-between items-center py-5 border-2 rounded-md">
       {/* LEFT HALF */}
       <div className="flex-1 hidden md:block">
         <img src="images/achieve.png" alt="achievement" />

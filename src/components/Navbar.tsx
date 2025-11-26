@@ -36,13 +36,13 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="md:flex hidden justify-between items-center p-4">
-        <div className="navbar-logo">
+      <nav className="md:flex hidden justify-between items-center p-4 px-20">
+        <div>
           <Link to="/">
             <img src="images/logo.svg" alt="Logo" height={40} />
           </Link>
         </div>
-        <ul className="navbar-links navbar-center flex gap-6 text-[#A7A7A7]">
+        <ul className="flex gap-6 text-[#A7A7A7]">
           <li>
             <Link
               to="/"
@@ -76,7 +76,7 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-        <div className="navbar-actions relative flex gap-4 items-center">
+        <div className="relative flex gap-4 items-center">
           <div
             onClick={() => setOpen(!open)}
             className="ease-in-out duration-200"
@@ -123,7 +123,7 @@ export default function Navbar() {
             ) : (
               <Link
                 to="/login"
-                className="navbar-login hover:border-1 p-2 rounded-md"
+                className="hover:border-1 p-2 rounded-md"
               >
                 Login
               </Link>
@@ -311,7 +311,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   to="/login"
-                  className="navbar-login hover:border-1 p-2 rounded-md"
+                  className="hover:border-1 p-2 rounded-md"
                 >
                   Login
                 </Link>

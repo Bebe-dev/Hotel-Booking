@@ -44,19 +44,19 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <div className="px-6 md:px-40 text-center mb-20">
+    <div className="mx-6 md:mx-20 text-center mb-20">
       <h1 className="text-[#484848] font-bold text-xl">Meet out team</h1>
       <p className="md:w-1/2 mx-auto text-[#A1A7B0] mb-10">
         Our philosophy is simple — hire a team of diverse, passionate people and
         foster a culture that empowers you to do you best work.
       </p>
 
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:my-20">
         {teamMembers.map((member) => (
             <div className="flex flex-col gap-2 items-center text-center" key={member.name}>
                 <img src={member.photo} alt={member.name} />
                 <h2 className="font-semibold">{member.name}</h2>
-                <p>{member.role}</p>
+                <p className="text-[#25409C]">{member.role}</p>
             </div>
         ))}
       </div>

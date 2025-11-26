@@ -93,7 +93,7 @@ export default function Management() {
   };
 
   return (
-    <div className="w-full text-[#484848] h-screen overflow-y-auto">
+    <div className="w-full md:px-10 md:pt-5 text-[#484848] h-screen overflow-y-auto">
       <div className="flex justify-end items-center gap-4 py-4 pr-6">
         <div>
           <button
