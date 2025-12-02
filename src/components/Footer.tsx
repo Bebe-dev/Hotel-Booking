@@ -7,7 +7,7 @@ import {
 
 export default function Footer() {
   return (
-    <div className="pb-20 mt-20">
+    <div className="pb-20 mt-20 max-w-8xl mx-auto">
       {/* upper footer */}
       <div className="bg-[#25409C] text-white p-8 text-center">
         <h1 className="text-xl mb-8">Have questions or doubts</h1>

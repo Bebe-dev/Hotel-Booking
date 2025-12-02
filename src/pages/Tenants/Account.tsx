@@ -95,7 +95,7 @@ export default function Account() {
   const occupations = ["Study", "Work"];
 
   return (
-    <div className="relative px-2 md:px-20 md:py-15 pb-6 flex justify-between">
+    <div className="relative px-2 md:px-20 md:py-15 pb-6 flex justify-between max-w-8xl mx-auto">
       <div>
         <div className="relative w-full text-center flex flex-col gap-3">
           <div

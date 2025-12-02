@@ -119,7 +119,7 @@ export default function RoomDetails() {
   }
 
   return (
-    <div className="px-2 md:px-20 pb-10">
+    <div className="px-2 md:px-20 pb-10 max-w-8xl mx-auto">
       <div className="md:flex gap-20">
         {/* LEFT SIDE */}
         <div className="flex flex-col gap-2">

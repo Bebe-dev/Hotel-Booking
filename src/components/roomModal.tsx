@@ -207,7 +207,7 @@ export default function RoomModal({
             onClose={onClose}
             isOpen={isOpen}
             isCentered
-            size={"5xl"}
+            size={"6xl"}
             scrollBehavior="inside"
           >
             <ModalOverlay />
@@ -220,7 +220,7 @@ export default function RoomModal({
                   {/* LEFT SIDE */}
                   <div className="flex flex-col justify-between pb-10">
                     <div>
-                      <p>Upload Room Photos</p>
+                      <p className="pb-3">Upload Room Photos</p>
                       <div
                         className={`relative border-2 border-dashed rounded-lg h-32 flex flex-col justify-center items-center cursor-pointer ${
                           image ? "border-blue-500" : "border-[#D0D5DD]"
@@ -378,13 +378,13 @@ export default function RoomModal({
                       </label>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                         {amenities.map((amenity) => (
-                          <div key={amenity}>
+                          <div key={amenity} className="text-sm text-[#344054]">
                             <label htmlFor={amenity}>
                               <Field
                                 name="amenities"
                                 type="checkbox"
                                 value={amenity}
-                                className="text-sm"
+                                
                               />{" "}
                               {amenity}
                             </label>
@@ -393,13 +393,13 @@ export default function RoomModal({
                       </div>
                     </div>
 
-                    <div>
+                    <div >
                       <label className="font-semibold" htmlFor="suitableFor">
                         Suitable For
                       </label>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                         {suitableForOptions.map((option) => (
-                          <div key={option}>
+                          <div key={option} className="text-sm text-[#344054]">
                             <label htmlFor={option}>
                               <Field
                                 name={option}
@@ -419,7 +419,7 @@ export default function RoomModal({
                       </label>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                         {landlordRules.map((rule) => (
-                          <div key={rule}>
+                          <div key={rule} className="text-sm text-[#344054]">
                             <label htmlFor={rule}>
                               <Field
                                 name="rules"

@@ -9,7 +9,7 @@ import Team from "../../sections/aboutUs/team";
 export default function AboutUs() {
 
     return(
-        <div>
+        <div className="max-w-8xl mx-auto">
             
             <Hero />
             <Achievement />

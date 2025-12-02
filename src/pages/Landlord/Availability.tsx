@@ -46,7 +46,6 @@ export default function Availability() {
         grouped[roomNumber].tenants.push({Name, checkIn, checkOut, name});
         grouped[roomNumber].tenantsHosted += 1;
 
-        //console.log("CheckIn:", checkIn, "CheckOut:", checkOut);
         console.log(grouped)
         console.log(Object.values(grouped))
         
@@ -68,7 +67,7 @@ export default function Availability() {
   }, []);
 
   return (
-    <div className="h-screen p-6 md:px-10">
+    <div className="h-screen p-6 md:px-10 max-w-8xl mx-auto overflow-y-auto">
       <h2 className="text-2xl font-semibold mb-4">Room Availability</h2>
 
       <div className="grid grid-cols-[200px_repeat(12,1fr)] items-center gap-1 pb-2">
@@ -102,6 +101,7 @@ export default function Availability() {
                     }}
                   >
                     <span>{tenant?.Name}</span>
+                    
                   </div>
                 );
               })}

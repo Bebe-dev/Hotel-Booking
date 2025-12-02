@@ -47,7 +47,7 @@ export default function Booking() {
   ];
 
   return (
-    <div className="px-16 flex justify-between ">
+    <div className="px-16 flex justify-between max-w-8xl mx-auto">
       <div className="w-full pr-6 ">
         {steps.map((step, index) => {
           const active =
@@ -69,7 +69,7 @@ export default function Booking() {
 
       {/* RIGHT  SIDE */}
 
-      <div className="w-full flex flex-col gap-2">
+      <div className="hidden w-full md:flex flex-col gap-2">
         <img
           src="/images/room1.svg"
           alt={room?.propertyTitle}

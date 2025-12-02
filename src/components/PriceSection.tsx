@@ -8,11 +8,11 @@ export default function PriceSection() {
       <div>
         <label className="font-semibold">Pricing Type</label>
         <div className="flex gap-4 items-center pb-2">
-          <label>
+          <label className="gap-2 flex">
             <Field type="radio" name="pricingMode" value="fixed" />
             Fixed Price
           </label>
-          <label>
+          <label className="gap-2 flex">
             <Field type="radio" name="pricingMode" value="monthly" />
             Different Monthly Prices
           </label>
@@ -35,7 +35,7 @@ export default function PriceSection() {
           {values.monthlyPrices.map((item: any, index: number) => (
             <div
               key={index}
-              className="flex flex-col bg-[#D0D5DD] p-2 text-center"
+              className="flex flex-col gap-2 bg-[#D0D5DD] rounded p-2 text-center"
             >
               <label className="font-semibold text-[#344054]">
                 {item.month}
@@ -43,8 +43,8 @@ export default function PriceSection() {
               <Field
                 name={`monthlyPrices[${index}].price`}
                 type="number"
-                className="bg-white border border-2 border-[#D0D5DD] rounded-md  "
-                placeholder=" 500€"
+                className="bg-white border border-2 border-[#D0D5DD] placeholder:text-center rounded-md py-2 "
+                placeholder="500€"
               />
             </div>
           ))}

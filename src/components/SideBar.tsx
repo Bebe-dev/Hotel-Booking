@@ -5,24 +5,27 @@ import { HiOutlineInboxStack } from "react-icons/hi2";
 import { IoSettingsOutline } from "react-icons/io5";
 import { SlLogout } from "react-icons/sl";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function SideBar() {
+
+  const [active, setActive] = useState("dashboard")
   return (
-    <div className="p-6 bg-[#FAFAFA] h-min-screen text-[#475467] flex flex-col justify-between">
+    <div className="hidden p-6 bg-[#FAFAFA] w-1/5 h-min-screen text-[#475467] md:flex flex-col justify-between">
       <div className="flex flex-col gap-3">
-        <Link to="/landlords/dashboard" className="flex gap-2 items-center">
+        <Link to="/landlords/dashboard" onClick={()=> setActive("dashboard")} className={`${active === "dashboard" ? "bg-[#25409C] text-white p-2" : ""} rounded-lg flex gap-2 items-center `}>
           <HiOutlineHome />
           Dashboard
         </Link>
-        <Link to="/landlords/management" className="flex gap-2 items-center">
+        <Link to="/landlords/management" onClick={()=> setActive("management")} className={`${active === "management" ? "bg-[#25409C] text-white p-1 py-2" : ""} rounded-lg flex gap-2 items-center `}>
           <MdOutlineChair />
           Property Management
         </Link>
-        <Link to="/landlords/availability" className="flex gap-2 items-center">
+        <Link to="/landlords/availability" onClick={()=> setActive("availability")} className={`${active === "availability" ? "bg-[#25409C] text-white p-2" : ""} rounded-lg flex gap-2 items-center `}>
           <GoBell />
           Room Availabilty
         </Link>
-        <Link to="/landlords/request" className="flex gap-2 items-center">
+        <Link to="/landlords/request" onClick={()=> setActive("request")} className={`${active === "request" ? "bg-[#25409C] text-white p-2" : ""} rounded-lg flex gap-2 items-center `}>
           <HiOutlineInboxStack />
           Booking Requests
         </Link>

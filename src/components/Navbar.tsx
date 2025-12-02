@@ -35,7 +35,7 @@ export default function Navbar() {
   };
 
   return (
-    <div>
+    <div className="max-w-8xl mx-auto">
       <nav className="md:flex hidden justify-between items-center p-4 px-20">
         <div>
           <Link to="/">

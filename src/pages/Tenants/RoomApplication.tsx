@@ -136,7 +136,7 @@ export default function RoomApplication() {
   return (
     <div>
       {/* DESKTOP VIEW */}
-      <div className="hidden md:block px-30 text-center">
+      <div className="hidden md:block px-30 text-center max-w-8xl mx-auto">
         <h1 className="font-bold text-xl">Room Applications</h1>
 
         {bookings.length === 0 ? (
@@ -289,7 +289,7 @@ export default function RoomApplication() {
 
       {/* MOBILE VIEW */}
       <div className="min-h-screen bg-gray-50 pb-6 md:hidden">
-        {/* Header */}
+        
         <div className="bg-white px-4 py-6 shadow-sm sticky top-0 z-10">
           <h1 className="font-bold text-xl text-center mb-4">
             Room Applications
@@ -301,7 +301,7 @@ export default function RoomApplication() {
                 {bookings.length} requests
               </p>
 
-              {/* Search Bar */}
+              
               <div className="relative">
                 <Search
                   className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -319,7 +319,7 @@ export default function RoomApplication() {
           )}
         </div>
 
-        {/* Content */}
+       
         <div className="px-4 pt-4">
           {bookings.length === 0 ? (
             <div className="text-center py-12">
@@ -332,7 +332,7 @@ export default function RoomApplication() {
                   key={booking.roomId}
                   className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200"
                 >
-                  {/* Card Header - Always Visible */}
+                  
                   <div
                     onClick={() => toggleExpand(booking.roomId)}
                     className="p-4 cursor-pointer active:bg-gray-50 transition-colors"
@@ -388,10 +388,10 @@ export default function RoomApplication() {
                     </div>
                   </div>
 
-                  {/* Expanded Details */}
+                  
                   {expandedId === booking.roomId && (
                     <div className="border-t border-gray-200 bg-gray-50 p-4 space-y-4">
-                      {/* Property Image */}
+                     
                       <div className="w-full">
                         <img
                           src="/images/room1.svg"
@@ -400,7 +400,7 @@ export default function RoomApplication() {
                         />
                       </div>
 
-                      {/* Property Details */}
+                      
                       <div className="space-y-3">
                         <div>
                           <p className="text-xs text-gray-500 mb-1">Landlord</p>
@@ -432,7 +432,7 @@ export default function RoomApplication() {
                         </div>
                       </div>
 
-                      {/* Tenant Message */}
+                      
                       <div className="bg-white p-4 rounded-lg">
                         <p className="font-semibold text-sm mb-2">
                           Tenant Message:
@@ -449,7 +449,7 @@ export default function RoomApplication() {
                         </p>
                       </div>
 
-                      {/* Action Button */}
+                     
                       <button
                         onClick={() => handleCancel(booking.fid)}
                         className="w-full bg-white border-2 border-gray-300 text-gray-700 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 active:bg-gray-100 transition-colors"

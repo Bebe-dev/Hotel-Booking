@@ -41,7 +41,7 @@ export default function SignUp() {
   
 
     return (
-        <div style={{ margin: '0 auto' }}>
+        <div style={{ margin: '0 auto' }} className='max-w-8xl mx-auto'>
             <div>
                 {step === 1 && <StepOne formData={formData} handleChange={handleChange} onNext={handleNext} />}
                 {step === 2 && <StepTwo formData={formData} handleChange={handleChange} onNext={handleNext} />}

@@ -19,7 +19,7 @@ export default function LandlordLogin() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className="min-h-screen flex gap-10 w-full">
+    <div className="min-h-screen flex gap-10 w-full max-w-8xl mx-auto">
       <div className="hidden md:block h-screen w-1/2 bg-cover bg-center bg-[url(/images/login.svg)]" />
       <div className="p-4 md:w-1/2 flex flex-col gap-2 items-center justify-center ">
         <img src="/images/logo.svg" alt="Logo" />

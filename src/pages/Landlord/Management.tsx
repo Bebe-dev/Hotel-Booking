@@ -75,9 +75,7 @@ export default function Management() {
   }, [user]);
 
   const handleDelete = async () => {
-    // if (!window.confirm("Are you sure you want to delete this room?")) {
-    //   return;
-    // }
+    
     try {
       await deleteDoc(doc(db, "rooms", selectedRoomId));
 
@@ -93,7 +91,7 @@ export default function Management() {
   };
 
   return (
-    <div className="w-full md:px-10 md:pt-5 text-[#484848] h-screen overflow-y-auto">
+    <div className="w-full md:px-10 md:pt-5 text-[#484848] h-screen max-w-8xl mx-auto overflow-y-auto">
       <div className="flex justify-end items-center gap-4 py-4 pr-6">
         <div>
           <button
@@ -197,7 +195,7 @@ export default function Management() {
       </div>
 
       {/* MOBILE VIEW */}
-      <div className="lg:hidden">
+      <div className="lg:hidden p-4 space-y-4">
         {rooms.map((room) => (
           <div
             key={room.id}

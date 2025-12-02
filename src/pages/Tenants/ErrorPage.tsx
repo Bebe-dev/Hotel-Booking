@@ -8,7 +8,7 @@ export default function ErrorPage() {
 
     
   return (
-    <div>
+    <div className="max-w-8xl mx-auto">
       <div className="flex flex-col items-center justify-center h-screen">
         <p className="text-[#25409C] font-semibold">404 error</p>
         <h1 className="text-6xl font-bold mb-4">Page not found</h1>

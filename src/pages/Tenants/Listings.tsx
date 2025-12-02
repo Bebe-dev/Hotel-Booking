@@ -105,7 +105,7 @@ export default function Listings() {
   }, [rooms, filterValues, sliderValue, sortBy]);
 
   return (
-    <div>
+    <div className="max-w-8xl mx-auto">
       <div className="md:flex">
         <aside className="md:w-64 p-4">
           <Formik

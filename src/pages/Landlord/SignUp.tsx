@@ -87,7 +87,7 @@ export default function LandlordSIgnUp() {
   };
 
   return (
-    <div className="flex min-h-screen ">
+    <div className="flex min-h-screen max-w-8xl mx-auto">
       <div className="md:w-1/2 flex flex-col ml-8 pb-4 ">
         <h2 className="text-2xl text-[#25409C] font-bold my-6 text-center">
           Sign Up

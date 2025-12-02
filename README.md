@@ -1,69 +1,160 @@
-# React + TypeScript + Vite
+# Erasmus Life Housing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ A booking platformthat connects tenants with rental options and also simplifies property management for landlords
 
-Currently, two official plugins are available:
+🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 URL: https://hotel-booking-jet-six.vercel.app/
 
-## Expanding the ESLint configuration
+## Table of Contents
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- About the Project
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Usage
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## About the Project
+
+This project is a room-booking web application where users can search, view, and book apartments. Landlords can list their properties, and users can manage their accounts in real time.
+
+## Features
+
+### Tenant Features
+
+- Sign up & log in (Email/Password)
+
+- Browse available rooms
+
+- Apply filters: location, budget, amenities, etc.
+
+- View full room details
+
+= Book a room (multi-step form)
+
+- Manage account + update profile in real-time 
+
+- View booking details
+
+- Receive verification email upon sign up
+
+### Landlord Features
+
+- Dedicated landlord signup & login
+
+- Add new property listings (room name, price, amenities)
+
+- Edit and update existing listings
+
+- Delete listings
+
+- View booking applications from tenants
+
+- Real-time updates using Firestore
+
+- Protected dashboard (only logged-in landlords)
+
+- Store listings in Firestore with landlordId reference for filtering
+
+### General App Features
+
+- Firebase Authentication + Firestore database
+
+- Responsive UI (mobile → desktop → large screens)
+
+- Secure protected routes
+
+- Leaflet map integration
+
+- Vercel deployment
+
+
+
+## Tech Stack
+
+- React + TypeScript
+
+- Vite
+
+- Chakra UI 
+
+- Tailwind CSS
+
+- React Router
+
+- Leaflet Map
+
+- Firebase Authentication
+
+- Cloud Firestore
+
+- Firebase Storage
+
+
+
+## Usage
+
+1. How to Sign Up
+
+Users can create an account through a guided multi-step signup form.
+
+Email verification is required before accessing protected features.
+
+Both tenants and landlords have dedicated signup/login flows.
+
+2. How to Search for Rooms
+
+Tenants can browse available rooms directly from the Listings page.
+
+Filters allow users to refine results by:
+
+Location
+
+Price range
+
+Amenities
+
+Room type
+
+Detailed room pages include descriptions, availability, and landlord information.
+
+3. How to Apply / Book a Room
+
+Tenants can initiate an application from the room details page.
+
+The app supports:
+
+Contact information input
+
+Payment or reservation steps
+
+Uploading necessary documents
+
+4. Landlord Features
+
+Landlords have a dedicated portal where they can:
+
+Create listings (add room details, amenities, images, pricing)
+
+View incoming applications
+
+Manage existing listings (edit, update availability, or delete)
+
+5. How to Manage Your Account
+
+Users can edit their personal details from the Account page.
+
+Real-time updates ensure Firestore syncs changes automatically.
+
+Users can:
+
+Update profile information
+
+Delete their account (requires recent login)
+
+
+
