@@ -234,7 +234,7 @@ export default function LandlordSIgnUp() {
           {/* <a href="/landlords/login" className="text-[#25409C] font-bold hover:underline">
             Log in
           </a> */}
-          <Link to="/landlords/login">Log in</Link>
+          <Link to="/landlords/login" className="text-[#25409C] hover:underline">Log in</Link>
         </div>
         {/* <div className="flex gap-6 justify-around items-center text-sm mt-2">
           <p>&copy; ErasmusLifeHousing</p>
@@ -247,7 +247,7 @@ export default function LandlordSIgnUp() {
           </a>
         </div> */}
       </div>
-      <div className="hidden md:block md:w-1/2 bg-cover bg-center bg-[url(/images/signup1.svg)]" />
+      <div className="hidden md:block md:w-1/2 bg-cover bg-center bg-[url(/images/signup1.png)]" />
     </div>
   );
 }

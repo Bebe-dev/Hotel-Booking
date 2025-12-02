@@ -22,7 +22,7 @@ export default function Login() {
       <div
         className="flex-1 bg-cover bg-center hidden md:block"
         style={{
-          backgroundImage: "url('images/login.svg')",
+          backgroundImage: "url('images/login.png')",
         }}
       />
       {/* Right Form */}

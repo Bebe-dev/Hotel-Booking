@@ -106,7 +106,7 @@ export default function StepTwo({ onNext }:Step2) {
       {/* Right Side: Image */}
       <div className="hidden md:block md:w-1/2">
         <img
-          src="images/signup2.svg"
+          src="images/signup2.png"
           alt="Sign up image"
           className="w-full h-full object-cover"
         />

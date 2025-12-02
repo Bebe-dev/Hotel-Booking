@@ -107,7 +107,7 @@ export default function StepThree({ formData }: StepThreeProps) {
       </div>
       <div className="hidden md:block md:w-1/2">
         <img
-          src="images/signup3.svg"
+          src="images/signup3.png"
           alt="Sign up image"
           className="w-full h-full object-cover"
         />

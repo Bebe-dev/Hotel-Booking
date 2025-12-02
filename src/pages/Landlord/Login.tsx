@@ -20,7 +20,7 @@ export default function LandlordLogin() {
 
   return (
     <div className="min-h-screen flex gap-10 w-full max-w-8xl mx-auto">
-      <div className="hidden md:block h-screen w-1/2 bg-cover bg-center bg-[url(/images/login.svg)]" />
+      <div className="hidden md:block h-screen w-1/2 bg-cover bg-center bg-[url(/images/login.png)]" />
       <div className="p-4 md:w-1/2 flex flex-col gap-2 items-center justify-center ">
         <img src="/images/logo.svg" alt="Logo" />
         <h2 className="mb-2 text-2xl text-[#25409C] font-bold">Log in</h2>
@@ -145,7 +145,7 @@ export default function LandlordLogin() {
             <FaFacebook color="blue" size={24} />
           </button>
         </div>
-        {/* Don't have an account */}
+      
         <div className="text-sm">
           Don't have an account?{" "}
           <Link

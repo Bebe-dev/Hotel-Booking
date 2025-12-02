@@ -223,7 +223,7 @@ export default function StepOne({ onNext }: Step1) {
       {/* Right: Image */}
       <div className="hidden md:block md:w-1/2">
         <img
-          src="images/signup1.svg"
+          src="images/signup1.png"
           alt="Sign up image"
           className="w-full h-full object-cover"
         />
